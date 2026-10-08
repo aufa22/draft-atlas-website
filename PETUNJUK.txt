@@ -1,0 +1,47 @@
+DRAFT ATLAS — MPL INDONESIA HERO INTELLIGENCE
+
+CARA MEMBUKA
+Klik dua kali draft-atlas.html, atau buka file itu menggunakan Chrome/Edge.
+Website berjalan secara lokal. Tidak memerlukan Python, instalasi, atau API key.
+Seluruh data, tampilan, dan perhitungan sudah berada dalam satu file HTML.
+Tidak ada layanan analitik atau koneksi API otomatis.
+
+FITUR
+- Pilih Season 16, 17, atau 18.
+- Filter Regular Season / Playoffs, cari hero, dan tentukan minimum pick.
+- Pilih sorting melalui dropdown atau klik judul kolom tabel.
+- Grafik peringkat presence/pick/ban/win rate dan scatter presence vs win rate.
+- Klik nama hero, bar grafik, atau titik scatter untuk membandingkan tiga musim.
+- Ekspor CSV menyimpan seluruh hasil filter sesuai urutan, bukan hanya halaman tabel.
+- Tombol Data & metode memuat definisi rate serta masalah data yang ditemukan.
+- Reset filter mempertahankan musim aktif dan mengembalikan filter lain ke awal.
+
+CAKUPAN DATA
+S16: 80 seri; 207 game dengan hasil; 205 game valid; 86 hero teramati.
+S17: 80 seri; 205 game dengan hasil; 205 game valid; 84 hero teramati.
+S18: 80 seri termasuk jadwal; 137 game dengan hasil; 136 game valid; 89 hero teramati.
+S18 adalah snapshot pada 8 Oktober 2026, bukan keseluruhan musim yang sudah selesai.
+Data disalin dari CSV hasil olahan respons API Liquipedia milik pengguna.
+
+ATURAN
+Denominator rate adalah game valid pada musim dan tahap terpilih.
+Search dan minimum pick hanya menyaring hero yang ditampilkan.
+Win rate kosong jika hero tidak memiliki pick; hero tidak diplot pada scatter itu.
+Hero yang tidak teramati dalam suatu musim tidak ditafsirkan otomatis belum rilis.
+Nilai patch API belum diverifikasi; dashboard tidak menampilkan patch sebagai filter.
+Satu game S18 dan dua game S16 dikeluarkan dari statistik utama akibat masalah draft.
+Lihat Data & metode untuk rincian game. Tidak dilakukan koreksi nama hero secara tebakan.
+
+PENGUJIAN
+259 baris hero-musim dibandingkan dengan CSV sumber dan seluruh angka cocok.
+Logika filter musim/tahap, pencarian, minimum pick, sorting, pagination, perbandingan,
+keadaan kosong, dan ekspor CSV diuji otomatis dengan adapter DOM.
+Pratinjau desktop/mobile di browser nyata belum berhasil dijalankan karena Chromium
+tidak tersedia dan unduhannya gagal di lingkungan pembuatan.
+
+PEMBARUAN
+Data dalam HTML bersifat tetap. Untuk memperbarui statistik, ambil respons API terbaru
+lalu olah kembali dan ganti data tertanam. Website ini belum dipublikasikan ke URL publik.
+
+Hak merek Mobile Legends: Bang Bang dan MPL berada pada pemilik masing-masing.
+Desain dashboard ini merupakan dashboard riset independen.
